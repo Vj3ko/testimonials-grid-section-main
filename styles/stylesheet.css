@@ -1,0 +1,211 @@
+/* variables */
+
+:root {
+      --clr-violet: hsl(263, 55%, 52%);
+      --clr-darkGrayBlue: hsl(217, 19%, 35%);
+      --clr-darkBlackBlue: hsl(219, 29%, 14%);
+      --clr-white: hsl(0, 0%, 100%);
+      --clr-ltGray: hsl(0, 0%, 81%);
+      --clr-ltGrayBlue: hsl(210, 46%, 95%);
+}
+
+/* global styles */
+
+*,
+*::before,
+*::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+      font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+p {
+      font-size: 0.8125rem;
+}
+
+/* main styles */
+
+main {
+      min-height: 100vh;
+      width: 100%;
+      background: var(--clr-ltGrayBlue);
+}
+
+.testimonials {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      gap: 1.5625rem;
+      padding-top: 4.375rem;
+      padding-bottom: 4.375rem;
+}
+
+.container {
+      padding: 1.875rem;
+}
+
+.person {
+      display: flex;
+      align-items: center;
+}
+
+.testimonial {
+      border-radius: 0.625rem;
+      box-shadow: 10px 20px 20px -5px rgb(0, 0, 0, 0.15);
+}
+
+.testimonial:first-of-type {
+      background: var(--clr-violet) url(../images/bg-pattern-quotation.svg)
+            no-repeat;
+      background-position: top right 1.5625rem;
+}
+
+.testimonial:nth-of-type(2) {
+      background: var(--clr-darkGrayBlue);
+}
+
+.testimonial:nth-of-type(4) {
+      background: var(--clr-darkBlackBlue);
+}
+
+.testimonial.bg-white {
+      background: var(--clr-white);
+}
+
+.testimonial.bg-white p {
+      color: var(--clr-darkGrayBlue);
+}
+
+.testimonial.bg-white h3 {
+      color: var(--clr-darkGrayBlue);
+}
+
+.testimonial.bg-white .testimonial_header {
+      color: var(--clr-darkGrayBlue);
+}
+
+.testimonial h3 {
+      font-size: 1rem;
+      color: var(--clr-ltGray);
+}
+
+.testimonial p {
+      color: var(--clr-ltGray);
+      opacity: 0.5;
+
+      line-height: 1.5;
+}
+
+.testimonial .person_img {
+      background-size: cover;
+      border-radius: 50%;
+      width: 2.1875rem;
+      height: 2.1875rem;
+}
+
+.img-1 {
+      background: url(../images/image-daniel.jpg) center;
+      border: 1px solid var(--clr-white);
+}
+
+.img-2 {
+      background: url(../images/image-jonathan.jpg) center;
+      border: 1px solid var(--clr-ltGray);
+}
+
+.img-3 {
+      background: url(../images/image-jeanette.jpg) center;
+}
+
+.img-4 {
+      background: url(../images/image-patrick.jpg) center;
+      border: 2px solid var(--clr-violet);
+}
+
+.img-5 {
+      background: url(../images/image-kira.jpg) center;
+}
+
+.person_info {
+      margin-left: 1rem;
+}
+
+.testimonial_header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--clr-white);
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+}
+
+p.testimonial_description {
+      opacity: 0.7;
+      font-size: 1rem;
+}
+
+/* responsive  600px and up */
+
+@media screen and (min-width: 37.5rem) {
+      main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      .testimonials {
+            grid-template-areas:
+                  "daniel daniel jonathan jonathan"
+                  "daniel daniel patrik patrik"
+                  "jeanette jeanette patrik patrik"
+                  "kira kira kira kira"
+                  "kira kira kira kira";
+      }
+      .testimonial:first-of-type {
+            grid-area: daniel;
+            background-position: top right 6.5625rem;
+            background-size: 21%;
+      }
+      .testimonial:nth-of-type(2) {
+            grid-area: jonathan;
+      }
+      .testimonial:nth-of-type(3) {
+            grid-area: jeanette;
+      }
+      .testimonial:nth-of-type(4) {
+            grid-area: patrik;
+      }
+      .testimonial:nth-of-type(5) {
+            grid-area: kira;
+      }
+      .testimonial h3 {
+            font-size: 0.75rem;
+      }
+      .testimonial p {
+            font-size: 0.625rem;
+      }
+
+      .testimonial_header {
+            font-size: 1.2rem;
+      }
+      p.testimonial_description {
+            font-size: 0.8125rem;
+      }
+}
+
+/* responsive  1040px and up */
+
+@media screen and (min-width: 65rem) {
+      .testimonials {
+            max-width: 69.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                  "daniel daniel jonathan kira"
+                  "daniel daniel jonathan kira"
+                  "jeanette patrik patrik kira"
+                  "jeanette patrik patrik kira";
+      }
+}
